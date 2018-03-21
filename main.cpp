@@ -394,11 +394,9 @@ public:
                 {
                 for(int j = 0; j < m1.getCols(); j++)
                     {
-                        cout << i << " " << j << endl;
                         fin >> m1.ptr[i][j];
                     }
                 }
-                cout << "GUT";
             return fin;
         }
 
