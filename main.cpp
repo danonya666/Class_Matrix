@@ -41,16 +41,19 @@ public:
             n_rows(other.n_rows),
             n_cols(other.n_cols)
             {
-                //cout << "Matrix copy" << endl;
-                ptr = new int* [n_rows];
-                for(int counter = 0; counter < n_rows; counter++)
-                    ptr[counter] = new int [n_cols];
-
-                for(int i = 0; i < n_rows; i++)
+                if(this != &other)
                 {
-                    for(int j = 0; j < n_cols; j++)
+                    //cout << "Matrix copy" << endl;
+                    ptr = new int* [n_rows];
+                    for(int counter = 0; counter < n_rows; counter++)
+                        ptr[counter] = new int [n_cols];
+
+                    for(int i = 0; i < n_rows; i++)
                     {
-                        ptr[i][j] = other.ptr[i][j];
+                        for(int j = 0; j < n_cols; j++)
+                        {
+                            ptr[i][j] = other.ptr[i][j];
+                        }
                     }
                 }
             }
